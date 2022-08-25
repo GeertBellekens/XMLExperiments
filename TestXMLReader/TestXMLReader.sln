@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestXMLReader", "TestXMLReader.csproj", "{1D68E969-5469-42E1-8C13-1122589EA187}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFileCreator", "..\TestFileCreator\TestFileCreator.csproj", "{2499BF63-48FB-4726-8CD5-F9931A4C6B21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D68E969-5469-42E1-8C13-1122589EA187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D68E969-5469-42E1-8C13-1122589EA187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D68E969-5469-42E1-8C13-1122589EA187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D68E969-5469-42E1-8C13-1122589EA187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2499BF63-48FB-4726-8CD5-F9931A4C6B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2499BF63-48FB-4726-8CD5-F9931A4C6B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2499BF63-48FB-4726-8CD5-F9931A4C6B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2499BF63-48FB-4726-8CD5-F9931A4C6B21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {842624F4-E4D9-4BDB-9CFD-581858201A66}
+	EndGlobalSection
+EndGlobal
