@@ -35,8 +35,9 @@
             this.feedbackTextBox = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.xmlFileGroup = new System.Windows.Forms.GroupBox();
-            this.importStream = new System.Windows.Forms.Button();
             this.ImportBulkButton = new System.Windows.Forms.Button();
+            this.importStream = new System.Windows.Forms.Button();
+            this.validateXSDButton = new System.Windows.Forms.Button();
             this.xmlFileGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +106,7 @@
             // 
             this.xmlFileGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.xmlFileGroup.Controls.Add(this.validateXSDButton);
             this.xmlFileGroup.Controls.Add(this.ImportBulkButton);
             this.xmlFileGroup.Controls.Add(this.importFileTextBox);
             this.xmlFileGroup.Controls.Add(this.importFileLabel);
@@ -118,6 +120,16 @@
             this.xmlFileGroup.TabStop = false;
             this.xmlFileGroup.Text = "XML File";
             // 
+            // ImportBulkButton
+            // 
+            this.ImportBulkButton.Location = new System.Drawing.Point(158, 66);
+            this.ImportBulkButton.Name = "ImportBulkButton";
+            this.ImportBulkButton.Size = new System.Drawing.Size(75, 23);
+            this.ImportBulkButton.TabIndex = 18;
+            this.ImportBulkButton.Text = "ImportBulk";
+            this.ImportBulkButton.UseVisualStyleBackColor = true;
+            this.ImportBulkButton.Click += new System.EventHandler(this.ImportBulkButton_Click);
+            // 
             // importStream
             // 
             this.importStream.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -129,15 +141,15 @@
             this.importStream.UseVisualStyleBackColor = true;
             this.importStream.Click += new System.EventHandler(this.importStream_Click);
             // 
-            // ImportBulkButton
+            // validateXSDButton
             // 
-            this.ImportBulkButton.Location = new System.Drawing.Point(158, 66);
-            this.ImportBulkButton.Name = "ImportBulkButton";
-            this.ImportBulkButton.Size = new System.Drawing.Size(75, 23);
-            this.ImportBulkButton.TabIndex = 18;
-            this.ImportBulkButton.Text = "ImportBulk";
-            this.ImportBulkButton.UseVisualStyleBackColor = true;
-            this.ImportBulkButton.Click += new System.EventHandler(this.ImportBulkButton_Click);
+            this.validateXSDButton.Location = new System.Drawing.Point(42, 66);
+            this.validateXSDButton.Name = "validateXSDButton";
+            this.validateXSDButton.Size = new System.Drawing.Size(110, 23);
+            this.validateXSDButton.TabIndex = 19;
+            this.validateXSDButton.Text = "Validate XSD";
+            this.validateXSDButton.UseVisualStyleBackColor = true;
+            this.validateXSDButton.Click += new System.EventHandler(this.validateXSDButton_Click);
             // 
             // TestXMLReaderForm
             // 
@@ -170,6 +182,7 @@
         private System.Windows.Forms.GroupBox xmlFileGroup;
         private System.Windows.Forms.Button importStream;
         private System.Windows.Forms.Button ImportBulkButton;
+        private System.Windows.Forms.Button validateXSDButton;
     }
 }
 

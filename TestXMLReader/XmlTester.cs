@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml;
 using System.Data.SqlClient;
+using System.Xml.Schema;
 
 namespace TestXMLReader
 {
     internal class XmlTester
     {
+        private System.IO.StreamWriter logfile;
         public static string importFullMemory(string fileName)
         {
             var returnValue = $"{DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss.fff")} Start reading '{fileName}'{Environment.NewLine}";
@@ -103,6 +105,51 @@ namespace TestXMLReader
             }
             feedback.AppendLine($"{DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss.fff")} Finished importing {i} nodes");
             return feedback.ToString();
+
+        }
+        public string validateXSDStreaming(string fileName, string xsdFileName)
+        {
+            this.logfile = new System.IO.StreamWriter("c:\\temp\\XML\\validationErrors.log", true);
+            var feedback = new StringBuilder();
+            feedback.AppendLine($"{DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss.fff")} Start validating '{fileName}'");
+            XmlReaderSettings readerSettings = new XmlReaderSettings();
+            readerSettings.Schemas.Add("http://www.sivi.org/berichtschema", xsdFileName);
+            readerSettings.ValidationType = ValidationType.Schema;
+            readerSettings.ValidationEventHandler += new ValidationEventHandler(readerSettingsValidationEventHandler);          
+
+            using (XmlReader reader = XmlReader.Create(fileName,readerSettings ))
+            {
+                while (reader.Read()) { }
+            }
+            feedback.AppendLine($"{DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss.fff")} Finished validating '{fileName}'");
+            logfile.Close();
+            return feedback.ToString();
+        }
+        void readerSettingsValidationEventHandler(object sender, ValidationEventArgs e)
+        {
+            if (e.Severity == XmlSeverityType.Warning)
+            {
+                log("WARNING: " + e.Message);
+            }
+            else if (e.Severity == XmlSeverityType.Error)
+            {
+               log("ERROR: " + e.Message);
+            }
+        }
+        private static DateTime lastTimeStamp = System.DateTime.Now;
+        
+        public void log(string logmessage)
+        {
+            try
+            {
+                double diff = (System.DateTime.Now - lastTimeStamp).TotalMilliseconds;
+                lastTimeStamp = System.DateTime.Now;
+                this.logfile.WriteLine(System.DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss.fff") + " diff: " + diff.ToString() + " ms " + logmessage);
+            }
+            catch (Exception)
+            {
+                // do nothing. If the logging fails we don't want to log anything to avoid eternal loops
+            }
 
         }
 

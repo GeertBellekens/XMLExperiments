@@ -91,6 +91,13 @@ namespace TestXMLReader
             this.enableDisable();
         }
 
-
+        private void validateXSDButton_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            this.feedbackTextBox.Clear();
+            var feedback = new XmlTester().validateXSDStreaming(this.importFileTextBox.Text, "C:\\Temp\\XML\\Polis.xsd");
+            this.feedbackTextBox.Text = string.IsNullOrEmpty(feedback) ? "Finished without feedback" : feedback;
+            Cursor.Current = Cursors.Default;
+        }
     }
 }
