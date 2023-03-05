@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestXMLReader", "TestXMLRea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFileCreator", "..\TestFileCreator\TestFileCreator.csproj", "{2499BF63-48FB-4726-8CD5-F9931A4C6B21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLFormatter", "..\XMLFormatter\XMLFormatter.csproj", "{4AD604D0-D55B-4886-8FF1-95F6FD7C4D4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2499BF63-48FB-4726-8CD5-F9931A4C6B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2499BF63-48FB-4726-8CD5-F9931A4C6B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2499BF63-48FB-4726-8CD5-F9931A4C6B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AD604D0-D55B-4886-8FF1-95F6FD7C4D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AD604D0-D55B-4886-8FF1-95F6FD7C4D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AD604D0-D55B-4886-8FF1-95F6FD7C4D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AD604D0-D55B-4886-8FF1-95F6FD7C4D4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
